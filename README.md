@@ -1,6 +1,6 @@
 # Koin Street's KASH And AirDrop
 
-<img src="Koinstreet.png" width="250" height="200">
+<img src="Koinstreet.png" width="100" height="50">
 
 ## 1. What is KASH and Its Airdrop
 
