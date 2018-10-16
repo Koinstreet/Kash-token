@@ -4,13 +4,13 @@
 
 ## 1. What is KASH and Its Airdrop
 
-The KASH contract is a standard ERC20 token. It is the token used within the Koin Street.
+The KASH contract is a standard ERC20 token. It is the token used within the Koin Street ecosystem.
 
-The Airdrop is our way of rewarding early adopters and seeding the Koin Street ecosystem with a free distribution of KASH, no strings attached. During the Airdrop, the first 100,000 people to sign up will be able to claim a free KASH deposit to their Koin  wallet, with no need to stake or deposit any of their own funds to participate.
+The Airdrop is our way of rewarding early adopters and seeding the Koin Street ecosystem with a free distribution of KASH, no strings attached. During the Airdrop, the first 100,000 people to sign up will be able to claim a free KASH deposit to their Koinstreet wallet, with no need to stake or deposit any of their own funds to participate.
 
 ## 2. How does it work?
 
-Just by signing up with an email address and enabling 2-factor authentication (2FA), the first 100k adopters will be able to claim KASH in the Airdrop. Once the Airdrop closes, people are then free to hold the KASH in their Koin Street wallet, trade it on an exchange, and send it to other Koin Street users or any ERC20 compatible wallet. In the future, Koin Street holders will also be able to spend KASH at verified merchants and receive a 5% bonus on every transaction.
+Just by signing up with an email address and enabling 2-factor authentication (2FA), the first 100k adopters will be able to claim KASH in the Airdrop. Once the Airdrop closes, people are then free to hold the KASH in their Koinstreet wallet, trade it on an exchange, and send it to other Koin Street users or any ERC20 compatible wallet. In the future, Koin Street holders will also be able to spend KASH at verified merchants and receive a 5% bonus on every transaction.
 
 ## 3. Why do an Airdrop?
 
