@@ -10,7 +10,7 @@ The Airdrop is our way of rewarding early adopters and seeding the Koin Street e
 
 ## 2. How does it work?
 
-Just by signing up with an email address and enabling 2-factor authentication (2FA), the first 100k adopters will be able to claim KASH in the Airdrop. Once the Airdrop closes, people are then free to hold the KASH in their Koinstreet wallet, trade it on an exchange, and send it to other Koin Street users or any ERC20 compatible wallet. In the future, Koin Street holders will also be able to spend KASH at verified merchants and receive a 5% bonus on every transaction.
+Just by signing up with an email address and enabling 2-factor authentication (2FA), the first 100k adopters will be able to claim KASH in the Airdrop. Once the Airdrop closes, people are then free to hold the KASH in their Koinstreet wallet, trade it on an exchange, and send it to other Koin Street users or any ERC20 compatible wallet. In the future, Koin Street holders will also be able to use KASH to copy trades or tip each other within the social channels. User's will also be able to spend KASH at verified merchants and receive a 5% bonus on every transaction.
 
 ## 3. Why do an Airdrop?
 
