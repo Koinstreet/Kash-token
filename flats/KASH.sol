@@ -1,8 +1,8 @@
 pragma solidity 0.4.24;
 
-// File: contracts/ZTXInterface.sol
+// File: contracts/KASHInterface.sol
 
-contract ZTXInterface {
+contract KASHInterface {
     function transferOwnership(address _newOwner) public;
     function mint(address _to, uint256 amount) public returns (bool);
     function balanceOf(address who) public view returns (uint256);
@@ -497,15 +497,15 @@ contract PausableToken is StandardToken, Pausable {
   }
 }
 
-// File: contracts/ZTX.sol
+// File: contracts/KASH.sol
 
 /**
- * @title ZTX contract - ERC20token contract.
- * @author Gustavo Guimaraes - <gustavo@zulurepublic.io>
+ * @title KASH contract - ERC20token contract.
+ * @author Shadman Hossain - <shadman.hossain@protonmail.com>
  */
-contract ZTX is MintableToken, PausableToken {
-    string public constant name = "Zulu Republic Token";
-    string public constant symbol = "ZTX";
+contract KASH is MintableToken, PausableToken {
+    string public constant name = "Kash Token";
+    string public constant symbol = "KASH";
     uint8 public constant decimals = 18;
 
     constructor() public {
