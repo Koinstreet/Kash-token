@@ -113,9 +113,9 @@ library SafeMath {
   }
 }
 
-// File: contracts/ZTXInterface.sol
+// File: contracts/KASHInterface.sol
 
-contract ZTXInterface {
+contract KASHInterface {
     function transferOwnership(address _newOwner) public;
     function mint(address _to, uint256 amount) public returns (bool);
     function balanceOf(address who) public view returns (uint256);
@@ -127,8 +127,8 @@ contract ZTXInterface {
 
 /**
  * @title AirDropperCore
- * @author Gustavo Guimaraes - <gustavo@zulurepublic.io>
- * @dev Contract for the ZTX airdrop
+ * @author Shadman Hossain - <shadman.hossain@protonmail.com>
+ * @dev Contract for the KASH airdrop
  */
 contract AirDropperCore is Ownable {
     using SafeMath for uint256;
@@ -139,7 +139,7 @@ contract AirDropperCore is Ownable {
     uint256 public tokenAmountPerUser;
     uint256 public airdropReceiversLimit;
 
-    ZTXInterface public ztx;
+    KASHInterface public kash;
 
     event TokenDrop(address indexed receiver, uint256 amount);
 
@@ -147,18 +147,18 @@ contract AirDropperCore is Ownable {
      * @dev Constructor for the airdrop contract
      * @param _airdropReceiversLimit Cap of airdrop receivers
      * @param _tokenAmountPerUser Number of tokens done per user
-     * @param _ztx ZTX contract address
+     * @param _kash KASH contract address
      */
-    constructor(uint256 _airdropReceiversLimit, uint256 _tokenAmountPerUser, ZTXInterface _ztx) public {
+    constructor(uint256 _airdropReceiversLimit, uint256 _tokenAmountPerUser, KASHInterface _kash) public {
         require(
             _airdropReceiversLimit != 0 &&
             _tokenAmountPerUser != 0 &&
-            _ztx != address(0),
+            _kash != address(0),
             "constructor params cannot be empty"
         );
         airdropReceiversLimit = _airdropReceiversLimit;
         tokenAmountPerUser = _tokenAmountPerUser;
-        ztx = ZTXInterface(_ztx);
+        kash = KASHInterface(_ztx);
     }
 
     function triggerAirDrops(address[] recipients)
@@ -188,7 +188,7 @@ contract AirDropperCore is Ownable {
 
         claimedAirdropTokens[recipient] = true;
 
-        // eligible citizens for airdrop receive tokenAmountPerUser in ZTX
+        // eligible citizens for airdrop receive tokenAmountPerUser in KASH
         sendTokensToUser(recipient, tokenAmountPerUser);
         emit TokenDrop(recipient, tokenAmountPerUser);
     }
@@ -208,8 +208,8 @@ contract AirDropperCore is Ownable {
 
 /**
  * @title MintableAirDropper
- * @author Gustavo Guimaraes - <gustavo@zulurepublic.io>
- * @dev Airdrop contract that mints ZTX tokens
+ * @author Shadman Hossain - <shadman.hossain@protonmail.com>
+ * @dev Airdrop contract that mints KASH tokens
  */
 contract MintableAirDropper is AirDropperCore {
     /**
@@ -217,16 +217,16 @@ contract MintableAirDropper is AirDropperCore {
      * NOTE: airdrop must be the token owner in order to mint ZTX tokens
      * @param _airdropReceiversLimit Cap of airdrop receivers
      * @param _tokenAmountPerUser Number of tokens done per user
-     * @param _ztx ZTX contract address
+     * @param _kash KASH contract address
      */
     constructor
         (
             uint256 _airdropReceiversLimit,
             uint256 _tokenAmountPerUser,
-            ZTXInterface _ztx
+            KASHInterface _kash
         )
         public
-        AirDropperCore(_airdropReceiversLimit, _tokenAmountPerUser, _ztx)
+        AirDropperCore(_airdropReceiversLimit, _tokenAmountPerUser, _kash)
     {}
 
     /**
@@ -235,21 +235,21 @@ contract MintableAirDropper is AirDropperCore {
      * @param tokenAmount Number of rokens to receive
      */
     function sendTokensToUser(address recipient, uint256 tokenAmount) internal {
-        ztx.mint(recipient, tokenAmount);
+        kash.mint(recipient, tokenAmount);
         super.sendTokensToUser(recipient, tokenAmount);
     }
 
     /**
      * @dev Self-destructs contract
      */
-    function kill(address newZuluOwner) external onlyOwner {
+    function kill(address newKashOwner) external onlyOwner {
         require(
             numOfCitizensWhoReceivedDrops >= airdropReceiversLimit,
             "only able to kill contract when numOfCitizensWhoReceivedDrops equals or is higher than airdropReceiversLimit"
         );
 
-        ztx.unpause();
-        ztx.transferOwnership(newZuluOwner);
+        kash.unpause();
+        kash.transferOwnership(newKashOwner);
         selfdestruct(owner);
     }
 }
